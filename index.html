@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert2@8/dist/sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/clipboard@2.0.4/dist/clipboard.min.js"></script>
-    <title>正在为您跳转......</title>
+    <title></title>
 </head>
 <body class="">
 
@@ -64,10 +64,11 @@
             if (redirect) {
                 document.getElementById('redirect').value = atob(redirect);
                 if (!isVxOrAlipay()) {
+                    document.title = '正在为您跳转......';
                     document.location = atob(redirect);
                 } else {
-                    document.title = '请点击复制按钮，使用浏览器打开'
-                    document.getElementById('info').innerText = '请点击复制按钮，复制网址使用浏览器打开！'
+                    document.title = '请点击复制按钮，使用浏览器打开';
+                    document.getElementById('info').innerText = '请点击复制按钮，复制网址使用浏览器打开！';
                 }
             }
         }
