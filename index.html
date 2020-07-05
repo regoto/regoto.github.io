@@ -66,6 +66,7 @@
                 if (!isVxOrAlipay()) {
                     document.location = atob(redirect);
                 } else {
+                    document.title = '请点击复制按钮，使用浏览器打开'
                     document.getElementById('info').innerText = '请点击复制按钮，复制网址使用浏览器打开！'
                 }
             }
