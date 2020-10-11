@@ -59,7 +59,24 @@
             return /MicroMessenger/.test(ua) || /AlipayClient/.test(ua);
         }
 
+        function getFullRedirect(prefix, redirect) {
+            const directory = {
+                '1000': 'http://192.168.136.130:8000/',
+                '1001': 'http://',
+                '1002': 'http://',
+                '1003': 'http://',
+                '1004': 'http://',
+                '1005': 'http://',
+                '1006': 'http://',
+                '1007': 'http://',
+                '1008': 'http://',
+            };
+
+            return directory[prefix] + '/share-link/' + redirect;
+        }
+
         function init() {
+            const prefix = getQueryString('prefix');
             const redirect = getQueryString('redirect');
             if (redirect) {
                 document.getElementById('redirect').value = atob(redirect);
