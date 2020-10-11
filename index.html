@@ -78,11 +78,13 @@
         function init() {
             const prefix = getQueryString('prefix');
             const redirect = getQueryString('redirect');
+            const fullRedirect = getFullRedirect(prefix, redirect);
             if (redirect) {
-                document.getElementById('redirect').value = atob(redirect);
+                // document.getElementById('redirect').value = atob(redirect);
+                document.getElementById('redirect').value = fullRedirect;
                 if (!isVxOrAlipay()) {
                     document.title = '正在为您跳转......';
-                    document.location = atob(redirect);
+                    document.location = fullRedirect;
                 } else {
                     document.title = '请点击复制按钮，使用浏览器打开';
                     document.getElementById('info').innerText = '请点击复制按钮，复制网址使用浏览器打开！';
