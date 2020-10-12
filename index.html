@@ -56,7 +56,7 @@
 
         function isVxOrAlipay() {
             const ua = window.navigator.userAgent;
-            return /MicroMessenger/.test(ua) || /AlipayClient/.test(ua) || /QQ/.test(ua);
+            return /MicroMessenger/.test(ua) || /AlipayClient/.test(ua) || (ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') <0;
         }
 
         function getFullRedirect(prefix, redirect) {
